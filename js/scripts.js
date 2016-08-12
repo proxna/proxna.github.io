@@ -6,9 +6,9 @@ $(document).ready(function () {
         window.open("https://play.google.com/store/apps/details?id=com.pawelg.paweg.stickoftruth&hl=pl", "_blank");
     });
     $('#PoEcalc').click(function(){
-        window.open("https://play.google.com/store/apps/details?id=com.pawelg.paweg.stickoftruth&hl=pl", "_blank");
+        window.open("https://play.google.com/store/apps/details?id=com.pawelg.paweg.poeorbcalculator", "_blank");
     });
     $('#sortMan').click(function(){
-        window.open("https://play.google.com/store/apps/details?id=com.pawelg.paweg.stickoftruth&hl=pl", "_blank");
+        window.open("https://play.google.com/store/apps/details?id=com.FatPixel.sorman", "_blank");
     });
 });
