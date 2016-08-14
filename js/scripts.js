@@ -13,10 +13,10 @@ $(document).ready(function () {
     $('#sortMan').click(function(){
         window.open("https://play.google.com/store/apps/details?id=com.FatPixel.sorman", "_blank");
     });
-    window.setInterval(function(){
-        $('.image-container').fadeTo('slow', 0.3, function(){
-            $(this).css('background-image', 'url('+ imageTable[imgCouter%3]+')');
-        }).fadeTo('slow',1);
+    /*window.setInterval(function(){
+                $('body').fadeTo('slow', 0.3, function(){
+                    $(this).css('background-image', 'url('+ imageTable[imgCouter%3]+')');
+                }).fadeTo('slow',1);
         ++imgCouter
-    }, 3000);
+    }, 3000);*/
 });
