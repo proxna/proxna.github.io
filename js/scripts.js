@@ -14,7 +14,7 @@ $(document).ready(function () {
         window.open("https://play.google.com/store/apps/details?id=com.FatPixel.sorman", "_blank");
     });
     window.setInterval(function(){
-        $('body').fadeTo('slow', 0.3, function(){
+        $('.image-container').fadeTo('slow', 0.3, function(){
             $(this).css('background-image', 'url('+ imageTable[imgCouter%3]+')');
         }).fadeTo('slow',1);
         ++imgCouter
