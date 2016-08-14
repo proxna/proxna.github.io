@@ -19,4 +19,40 @@ $(document).ready(function () {
                 }).fadeTo('slow',1);
         ++imgCouter
     }, 3000);*/
+    $('#toHome').click(function () {
+        $('#home').ScrollTo({
+            duration:250,
+            callback:function(){
+                $('.current').removeClass('current');
+                $('#toHome').addClass('current')
+            }
+        });
+    });
+    $('#toSkills').click(function () {
+        $('#skills').ScrollTo({
+            duration:250,
+            callback:function(){
+                $('.current').removeClass('current');
+                $('#toSkills').addClass('current')
+            }
+        });
+    });
+    $('#toProjects').click(function () {
+        $('#projects').ScrollTo({
+            duration:250,
+            callback:function(){
+                $('.current').removeClass('current');
+                $('#toProjects').addClass('current')
+            }
+        });
+    });
+    $('#toContact').click(function () {
+        $('#contact').ScrollTo({
+            duration:250,
+            callback:function(){
+                $('.current').removeClass('current');
+                $('#toContact').addClass('current')
+            }
+        });
+    });
 });
