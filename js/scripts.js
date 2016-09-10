@@ -1,9 +1,26 @@
-/**
- * Created by GPDellKonto on 2016-07-26.
- */
-var imgCouter=1;
-var imageTable=['images/cover1.png', 'images/cover2.png', 'images/cover3.png'];
+var toTopVisible=false;
+var developmentIsVisible = false;
+
 $(document).ready(function () {
+
+    var windowWidth=$(window).width();
+    var windowHeight=$(window).height();
+    var $developmentWrapper = $('.development-wrapper');
+
+    $(window).resize(function(){
+        windowWidth=$(window).width();
+        windowHeight=$(window).height();
+        if(windowWidth<768 && toTopVisible){
+            $('#toHome').fadeOut();
+            toTopVisible=false;
+        }
+        else if(windowWidth>=768 && !toTopVisible && $(document).scrollTop()>=windowHeight){
+            $('#toHome').fadeIn();
+            toTopVisible=true;
+        }
+    });
+
+    //projects click
     $('#stickoftruth').click(function(){
         window.open("https://play.google.com/store/apps/details?id=com.pawelg.paweg.stickoftruth&hl=pl", "_blank");
     });
@@ -13,46 +30,85 @@ $(document).ready(function () {
     $('#sortMan').click(function(){
         window.open("https://play.google.com/store/apps/details?id=com.FatPixel.sorman", "_blank");
     });
-    /*window.setInterval(function(){
-                $('body').fadeTo('slow', 0.3, function(){
-                    $(this).css('background-image', 'url('+ imageTable[imgCouter%3]+')');
-                }).fadeTo('slow',1);
-        ++imgCouter
-    }, 3000);*/
-    $('#toHome').click(function () {
-        $('#home').ScrollTo({
-            duration:250,
-            callback:function(){
-                $('.current').removeClass('current');
-                $('#toHome').addClass('current')
+    
+    $('#toHome').hide();
+    //scroll events
+    $(window).scroll(function () {
+        //totopbutton show/hide
+        var scroll_top=$(document).scrollTop();
+        if(scroll_top>=windowHeight && !toTopVisible && windowWidth>=768){
+            $('#toHome').fadeIn();
+            toTopVisible=true;
+        }
+        else if(toTopVisible && scroll_top<windowHeight){
+            $('#toHome').fadeOut();
+            toTopVisible=false;
+        }
+
+        //skills and experience
+        var bottom_of_window = scroll_top + windowHeight;
+        $('.experience .content .hidden').each( function(i){
+
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+
+            /* If the object is completely visible in the window, fadeIn it */
+            if( bottom_of_window > bottom_of_object ){
+
+                $(this).animate({
+                    'opacity':'1',
+                    'margin-left': '0'
+                },600);
             }
         });
+
+        var middle_of_developmentWrapper = $developmentWrapper.offset().top + $developmentWrapper.outerHeight()/2;
+
+        if(bottom_of_window > middle_of_developmentWrapper && !developmentIsVisible){
+
+
+            $('.skills-bar-container li').each( function(){
+
+                var $barContainer = $(this).find('.bar-container');
+                var dataPercent = parseInt($barContainer.data('percent'));
+                var elem = $(this).find('.progressbar');
+                var percent = $(this).find('.percent');
+                var width = 0;
+
+                var id = setInterval(frame, 20);
+
+                function frame() {
+                    if (width >= dataPercent) {
+                        clearInterval(id);
+                    } else {
+                        width++;
+                        elem.css("width", width+"%");
+                        percent.html(width+" %");
+                    }
+                }
+            });
+            developmentIsVisible = true;
+        }
     });
+    //toTopClick
+    $('#toHome').click(function () {
+        $('#home').ScrollTo({
+            duration:250
+        });
+    });
+    //menuItemsClick
     $('#toSkills').click(function () {
         $('#skills').ScrollTo({
-            duration:250,
-            callback:function(){
-                $('.current').removeClass('current');
-                $('#toSkills').addClass('current')
-            }
+            duration:250
         });
     });
     $('#toProjects').click(function () {
         $('#projects').ScrollTo({
-            duration:250,
-            callback:function(){
-                $('.current').removeClass('current');
-                $('#toProjects').addClass('current')
-            }
+            duration:250
         });
     });
     $('#toContact').click(function () {
         $('#contact').ScrollTo({
-            duration:250,
-            callback:function(){
-                $('.current').removeClass('current');
-                $('#toContact').addClass('current')
-            }
+            duration:250
         });
     });
 });
