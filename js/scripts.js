@@ -30,7 +30,9 @@ $(document).ready(function () {
     $('#sortMan').click(function(){
         window.open("https://play.google.com/store/apps/details?id=com.FatPixel.sorman", "_blank");
     });
-    
+    $('#PoEweb').click(function(){
+        window.open("https://proxna.github.io/Path-Of-Exile-Orb-Calculator/", "_blank");
+    });
     $('#toHome').hide();
     //scroll events
     $(window).scroll(function () {

@@ -6,7 +6,7 @@
 * Globals
 
 */
-
+@import 'https://fonts.googleapis.com/css?family=Roboto';
 /* Links */
 a,
 a:focus,
@@ -32,6 +32,7 @@ a:hover {
 html,
 body {
     /*css for full size background image*/
+    font-family: 'Roboto', sans-serif;
     background: url(/images/pexels-photo-compressor.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -265,9 +266,7 @@ p {
     max-width: 100%;
 }
 /*animated cells*/
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,900);
 .snip1463 {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
     position: relative;
     /*float: left;*/
     overflow: hidden;
@@ -291,6 +290,7 @@ p {
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
 }
+
 .snip1463 img {
     opacity: 1;
     width: 100%;
@@ -546,7 +546,7 @@ p {
         text-align: left;
     }
 }
-
+/*buttons anim*/
 .button{
     border:3px solid white;
     background-color: rgba(0,0,0,0);
@@ -568,13 +568,18 @@ p {
     -moz-transform:scale(0.9);
     transform:scale(0.9);
 }
+
 .sign{
     margin-left: 5px;
     font-size:1.25em;
 }
+.web img{
+    width:160%;
+}
 .contact-inner{
     vertical-align: middle;
 }
+/*to top button*/
 .backToTopButton{
     position: fixed;
     bottom:5%;
@@ -589,6 +594,7 @@ p {
     -moz-transform:scale(1.1);
     transform:scale(1.1);
 }
+/*cover animations*/
 .cover-heading{
     -webkit-animation: titleAnim 1s ease;
     -moz-animation: titleAnim 1s ease;
