@@ -606,10 +606,11 @@ p {
     bottom: 2%;
     left:0;
     text-align: center;
-    animation-delay: 20s;
-    -webkit-animation: titleAnim 1s ease;
-    -moz-animation: titleAnim 1s ease;
-    animation: titleAnim 1s ease;
+    -webkit-animation: titleAnim 1s ease, chevAnim 2s infinite;
+    -moz-animation: titleAnim 1s ease, chevAnim 2s infinite;
+    animation: titleAnim 1s ease, chevAnim 2s infinite;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
 }
 /*backgrounds*/
 #projects{
@@ -620,7 +621,7 @@ p {
     background-color: #798175;
 }
 #skills .site-wrapper-inner{
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 #contact{
@@ -658,5 +659,40 @@ p {
     100%{
         transform: translateY(0%);
         opacity: 1.0;
+    }
+}
+@-webkit-keyframes chevAnim{
+    0%{
+        -webkit-transform: translateY(-25%);
+    }
+    50%{
+        -webkit-transform: translateY(0%);
+    }
+    100%{
+        -webkit-transform: translateY(-25%);
+    }
+}
+
+@-moz-keyframes chevAnim{
+    0%{
+        -moz-transform: translateY(-25%);
+    }
+    50%{
+        -moz-transform: translateY(0%);
+    }
+    100%{
+        -moz-transform: translateY(-25%);
+    }
+}
+
+@keyframes chevAnim{
+    0%{
+        transform: translateY(-25%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-25%);
     }
 }

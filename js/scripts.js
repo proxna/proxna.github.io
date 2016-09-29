@@ -33,6 +33,9 @@ $(document).ready(function () {
     $('#PoEweb').click(function(){
         window.open("https://proxna.github.io/Path-Of-Exile-Orb-Calculator/", "_blank");
     });
+    $('#cyberAttack').click(function(){
+        window.open("https://play.google.com/store/apps/details?id=com.fatpixel.cyberattack", "_blank");
+    });
     $('#toHome').hide();
     //scroll events
     $(window).scroll(function () {
