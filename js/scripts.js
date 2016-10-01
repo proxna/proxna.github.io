@@ -36,6 +36,9 @@ $(document).ready(function () {
     $('#cyberAttack').click(function(){
         window.open("https://play.google.com/store/apps/details?id=com.fatpixel.cyberattack", "_blank");
     });
+    $('#underTen').click(function(){
+        window.open("https://proxna.github.io/under10kcontest/", "_blank");
+    });
     $('#toHome').hide();
     //scroll events
     $(window).scroll(function () {
