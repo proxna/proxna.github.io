@@ -39,6 +39,9 @@ $(document).ready(function () {
     $('#underTen').click(function(){
         window.open("https://proxna.github.io/under10kcontest/", "_blank");
     });
+    $('#escapeFromWell').click(function () {
+        window.open("https://proxna.itch.io/escape-from-well", "_blank")
+    });
     $('#toHome').hide();
     //scroll events
     $(window).scroll(function () {
