@@ -42,6 +42,9 @@ $(document).ready(function () {
     $('#escapeFromWell').click(function () {
         window.open("https://proxna.itch.io/escape-from-well", "_blank")
     });
+    $('#overStats').click(function () {
+        window.open("https://proxna.github.io/overwatchStats", "_blank")
+    });
     $('#toHome').hide();
     //scroll events
     $(window).scroll(function () {
